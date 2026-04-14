@@ -1,0 +1,5 @@
+spring:
+    application:
+        name: springbootapiexample
+    liquibase:
+        enabled: false
