@@ -1,0 +1,7 @@
+databaseChangeLog:
+    - include:
+          file: classpath:db/changelog/db.changelog-master.yaml
+          relativeToChangelogFile: false
+    - include:
+          file: classpath:db/changelog/900-auth-test-seed.yaml
+          relativeToChangelogFile: false

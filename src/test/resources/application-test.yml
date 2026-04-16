@@ -1,0 +1,10 @@
+spring:
+    datasource:
+        url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/api-example}
+        username: ${SPRING_DATASOURCE_USERNAME:api-example}
+        password: ${SPRING_DATASOURCE_PASSWORD:secret}
+    liquibase:
+        change-log: classpath:db/changelog/db.changelog-test.yaml
+    docker:
+        compose:
+            enabled: false
