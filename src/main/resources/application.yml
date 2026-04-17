@@ -2,4 +2,13 @@ spring:
     application:
         name: springbootapiexample
     liquibase:
-        enabled: false
+        change-log: classpath:db/changelog/db.changelog-master.yaml
+    jpa:
+        hibernate:
+            ddl-auto: validate
+        open-in-view: false
+
+jwt:
+    secret: ${JWT_SECRET:default-dev-secret-that-is-at-least-sixty-four-bytes-long-for-hs512-algorithm!!}
+    access-token-ttl: ${JWT_ACCESS_TOKEN_TTL:5m}
+    issuer: ${JWT_ISSUER:http://localhost:8080}

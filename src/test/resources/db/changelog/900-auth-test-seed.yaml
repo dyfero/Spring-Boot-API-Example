@@ -1,0 +1,19 @@
+databaseChangeLog:
+    - changeSet:
+          id: 900-auth-test-seed-users
+          author: codex
+          runAlways: true
+          changes:
+              - sql:
+                    sql: |
+                        DELETE FROM users WHERE id = 1001 OR email = 'john@example.com';
+
+                        INSERT INTO users (id, name, email, password, created_at, updated_at)
+                        VALUES (
+                            1001,
+                            'John Doe',
+                            'john@example.com',
+                            '$2y$10$UV0Y/a7IrgrYpwT1Ewej.un6OD18ikrCf1vbvY0SaXJZEipqzDxAy',
+                            NOW(),
+                            NOW()
+                        );
